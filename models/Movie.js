@@ -1,6 +1,7 @@
 const {
+  Model,
   DataTypes
-} = require('sequelize/types');
+} = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Movie extends Model {}
