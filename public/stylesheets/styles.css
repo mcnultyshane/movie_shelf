@@ -1,0 +1,128 @@
+:root {
+    --black: rgb(24, 24, 24);
+    --red: #F87060;
+    --blue: #CDD7D6;
+    --tan: #B3A394;
+    --grey: rgb(73, 64, 88);
+    
+}
+
+html{
+    min-height: 100%;
+    position:relative;
+    background: linear-gradient(var(--black), var(--grey));
+  }
+
+
+  body {
+    height: 100%;
+    width: 100%;
+  }
+
+
+* {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+button {
+    color: var(--red)!important;
+    border-color: var(--blue)!important;
+    width: 200px;
+    /* text-shadow: 2px 2px 2px black;
+    box-shadow: 0px 0px 10px 5px var(--black); */
+}
+
+button:hover {
+    box-shadow: 0px 0px 10px 5px var(--red)!important;
+    text-decoration: none;
+}
+
+.button.is-ghost, .button.is-ghost:hover {
+    text-decoration: none;
+}
+
+#title {
+    color: linear;
+    font-size: 115px;
+    text-align: center;
+    padding-bottom: 50px;    
+    background: -webkit-linear-gradient(var(--grey),var(--red));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+#description {
+    color: var(--blue);
+    font-size: 30px;
+    text-align: center;
+    padding-bottom: 130px;
+
+}
+
+
+#loginbutton {
+    text-align: center;
+    position: relative;
+    /* width: 30%; */
+    display: block;
+    margin: 0 auto;
+    padding-bottom: 75px;
+}
+
+
+#signupbutton {
+    text-align: center;
+    position: relative;
+    /* width: 30%; */
+    display: block;
+    margin: 0 auto;
+}
+
+#input1 {
+    text-align: center;
+    position: relative;
+    /* width: 30%; */
+    display: block;
+    margin: 0 auto;
+    padding-bottom: 75px;
+    /* color: var(--red)!important; */
+}
+
+#submitbutton {
+    text-align: center;
+    position: relative;
+    /* width: 30%; */
+    display: block;
+    margin: 0 auto;
+
+}
+
+
+.input, .select select, .textarea {
+    background-color: transparent;
+    border-color: var(--red);
+    border-radius: 4px;
+    color: var(--red)!important;
+}
+
+
+.input:hover, .is-hovered.input, .is-hovered.textarea, .select select.is-hovered, .select select:hover, .textarea:hover {
+    box-shadow: 0px 0px 10px 5px var(--red);
+}
+
+
+ .input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--blue);
+    opacity: 1; /* Firefox */
+  }
+  
+  .input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: var(--blue);
+  }
+  
+  .input::-ms-input-placeholder { /* Microsoft Edge */
+    color: var(--blue);
+  }
