@@ -1,0 +1,43 @@
+<div class="card">
+  <div class="card-content">
+    <div class="content">
+      <form class="search-form">
+        <div>
+          <label for="genre-form">Select Movie Genre: </label>
+          {{! <input type="text" id="genre-search" /> }}
+          <select id="format-input" class="form-input w-100">
+
+            <option value="28">Action</option>
+            <option value="12">Adventure</option>
+            <option value="16">Animation</option>
+            <option value="35">Comedy</option>
+            <option value="80">Crime</option>
+            <option value="99">Documentary</option>
+            <option value="18">Drama</option>
+            <option value="10751">Family</option>
+            <option value="14">Fantasy</option>
+            <option value="36">History</option>
+            <option value="27">Horror</option>
+            <option value="10402">Music</option>
+            <option value="9648">Mystery</option>
+            <option value="10749">Romance</option>
+
+          </select>
+        </div>
+        <div>
+          <button
+            type="submit"
+            class="button is-info is-light is-outlined is-rounded"
+          >Search</button>
+        </div>
+      </form>
+        <div class="col-12 col-md-9 p-3 text-light">
+        <h2>Showing results for <span id="result-text"></span></h2>
+        <div id="result-content"></div>
+    </div>
+  </div>
+    </div>
+    
+  </div>
+</div>
+<script src="./javascript/search.js"></script>
