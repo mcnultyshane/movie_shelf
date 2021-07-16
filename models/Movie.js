@@ -38,6 +38,13 @@ Movie.init({
     type: DataTypes.INTEGER,
   },
 
+  shelf_id: {
+    type: DataTypes.INTEGER,
+    references: {
+      model: 'shelf',
+      key: 'id'
+    }
+  },
   watched: {
     type: DataTypes.BOOLEAN,
     default: false

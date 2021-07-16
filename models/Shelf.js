@@ -20,20 +20,6 @@ Shelf.init({
             model: 'user',
             key: 'id'
         }
-    },
-    movies_watched: {
-        type: DataTypes.BOOLEAN,
-        references: {
-            model: 'movie',
-            key: 'watched'
-        }
-    },
-    movies_on_deck: {
-        type: DataTypes.BOOLEAN,
-        references: {
-            model: 'movie',
-            key: 'on_deck'
-        }
     }
 }, {
     sequelize,
