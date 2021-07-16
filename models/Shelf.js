@@ -14,13 +14,22 @@ Shelf.init({
         primaryKey: true,
         autoIncrement: true,
     },
+    user_id: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: 'user',
+            key: 'id'
+        }
+    },
     movies_watched: {
+        type: DataTypes.BOOLEAN,
         references: {
             model: 'movie',
             key: 'watched'
         }
     },
     movies_on_deck: {
+        type: DataTypes.BOOLEAN,
         references: {
             model: 'movie',
             key: 'on_deck'
@@ -34,4 +43,4 @@ Shelf.init({
     modelName: 'shelf',
 });
 
-module.exports = User;
+module.exports = Shelf;

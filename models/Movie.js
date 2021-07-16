@@ -3,6 +3,8 @@ const {
 } = require('sequelize/types');
 const sequelize = require('../config/connection');
 
+class Movie extends Model {}
+
 Movie.init({
   id: {
     type: DataTypes.INTEGER,
@@ -52,4 +54,4 @@ Movie.init({
   modelName: 'movie',
 });
 
-module.exports = User;
+module.exports = Movie;
