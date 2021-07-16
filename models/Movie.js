@@ -1,46 +1,55 @@
+const {
+  DataTypes
+} = require('sequelize/types');
 const sequelize = require('../config/connection');
 
-Movie.init(
-    {
-      id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        primaryKey: true,
-        autoIncrement: true,
-      },
-      title: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-      
-      overview: {
-        type: DataTypes.STRING,
-      },
+Movie.init({
+  id: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    primaryKey: true,
+    autoIncrement: true,
+  },
+  title: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
 
-      poster_path: {
-        type: DataTypes.STRING,
-      },
+  overview: {
+    type: DataTypes.STRING,
+  },
 
-      genreId: {
-        type: DataTypes.INTEGER,
-      },
+  poster_path: {
+    type: DataTypes.STRING,
+  },
 
-      release_date: {
-        type: DataTypes.STRING,
-      },
+  genreId: {
+    type: DataTypes.INTEGER,
+  },
 
-      popularity: {
-        type: DataTypes.INTEGER,
-      }
+  release_date: {
+    type: DataTypes.STRING,
+  },
 
-    },
-    {
-          sequelize,
-          timestamps: false,
-          freezeTableName: true,
-          underscored: true,
-          modelName: 'movie',
-        }
-    );
+  popularity: {
+    type: DataTypes.INTEGER,
+  },
 
-    module.exports = User;
+  watched: {
+    type: DataTypes.BOOLEAN,
+    default: false
+  },
+
+  on_deck: {
+    type: DataTypes.BOOLEAN,
+    default: false
+  }
+}, {
+  sequelize,
+  timestamps: false,
+  freezeTableName: true,
+  underscored: true,
+  modelName: 'movie',
+});
+
+module.exports = User;
