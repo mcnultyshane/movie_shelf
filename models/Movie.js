@@ -47,6 +47,8 @@ Movie.init({
     type: DataTypes.BOOLEAN,
     default: false
   }
+
+  
 }, {
   sequelize,
   timestamps: false,

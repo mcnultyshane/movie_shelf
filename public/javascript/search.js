@@ -22,6 +22,16 @@ function searchApi(genreIdVal) {
     })
     .then(function (data) {
       console.log(data);
+      if (!data.results.length) {
+        console.log('No results found!');
+        resultContentEl.innerHTML = '<h3>No results found, search again!</h3>';
+      } else {
+        resultContentEl.textContent = '';
+        for (var i = 0; i < locRes.results.length; i++) {
+          printResults(locRes.results[i]);
+        }
+      }
+    
     });
 }
 
