@@ -19,7 +19,7 @@ Movie.init({
   },
 
   overview: {
-    type: DataTypes.STRING,
+    type: DataTypes.STRING(1000),
   },
 
   poster_path: {
