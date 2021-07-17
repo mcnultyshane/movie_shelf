@@ -1,24 +1,42 @@
 const router = require('express').Router();
-const { Movie, User } = require('../models');
+const { Movie, User, Shelf } = require('../models');
 const withAuth = require('../utils/auth');
+
+// Render the homepage
+router.get('/', async (req, res) => {
+  res.render('homepage');
+});
 
 router.get('/', async (req, res) => {
   res.render('homepage');
 });
 
-// Temorary location for testing out Movie API Calls
-router.get('/api-test', async (req, res) => {
-  res.render('apiCall');
-});
 
+
+// render the login page --> if the user is logged in, redirect to the homepage.
 router.get('/login', (req, res) => {
-  // If the user is already logged in, redirect the request to another route
-  if (req.session.logged_in) {
-    res.redirect('/profile');
+  if (req.session.loggedIn) {
+    res.redirect('/');
+
+
     return;
   }
 
   res.render('login');
+
+})
+
+// render the signup page --> if the user is logged in, redirect to the homepage.
+router.get('/signup', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+
+  res.render('signup');
 });
 
+
+
 module.exports = router;
+

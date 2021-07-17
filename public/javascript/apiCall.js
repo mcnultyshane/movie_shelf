@@ -26,16 +26,17 @@ function searchApi(genreIdVal) {
 showMovies = (movies) => {
 	// let el = document.getElementsByClassName('flag');
 
-	// if (!el) {
-	movies.forEach((movie) => {
-		const movieCard = document.createElement('div');
-		movieCard.classList.add(
-			'column',
-			'is-three-quarters-mobile', 'is-two-thirds-tablet', 'is-half-desktop', 'is-one-third-widescreen', 'is-one-quarter-fullhd',
-			'is-flex-wrap-wrap',
-			'is-flex-direction-row'
-		);
-		movieCard.innerHTML = `
+  // if (!el) {
+    movies.forEach((movie) => {
+      const movieCard = document.createElement("div");
+      movieCard.classList.add(
+        "column",
+        "is-one-quarter",
+        "is-flex-wrap-wrap",
+        "is-flex-direction-row"
+      );
+      movieCard.innerHTML = `
+
         <div id="flag" class="card mx-3">
           <div class="card-image">
             <figure class="image is-200x296">
@@ -45,6 +46,13 @@ showMovies = (movies) => {
           <div class="media-content">
                 <p class="title has-text-centered">${movie.title}</p>
           </div>
+        </div>
+      <footer class="card-footer">
+        <a href="#" class="card-footer-item">Save</a>
+
+        <a href="#" class="card-footer-item">Delete</a>
+      </footer>
+    </div>
   `;
 		titleEl.append(movieCard);
 	});
