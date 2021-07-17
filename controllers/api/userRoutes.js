@@ -6,32 +6,39 @@ const {
 } = require('../../models');
 const withAuth = require('../../utils/auth')
 
-// Get /api/users
+// Get /api/users -- get all users
 router.get('/', async (req, res) => {
     try {
+        // access the user model and run .findAll() method to get all users
         const userData = await User.findAll({
             attributes: {
+                // sent back data excludes password property
                 exclude: ['password']
             }
         })
+        // return data in JSON format
         res.json(userData)
+        // if server error, return the error
     } catch (err) {
         console.log(err);
         res.status(500).json.err
     }
 });
 
-// Get/api/users
+// Get/api/users/1 -- get a single user by id
 router.get('/:id', async (req, res) => {
     try {
+        // Access the User model and run the findOne() method to get a single user based on parameters
         const userData = await User.findOne({
             attributes: {
                 exclude: ['password']
             },
             where: {
+                // use id as parameter for request
                 id: req.params.id
             },
             include: [{
+                // include the user's shelf, and the movies on their shelf
                     model: Shelf,
                     attributes: ['id', 'user_id']
                 },
@@ -58,15 +65,17 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-// POST /api/users
+// POST /api/users -- add a new User
 router.post('/', async (req, res) => {
     try {
+        // create method
+        // expects an object in form {username: 'example', password: 'passwordExample'}
         const userData = await User.create({
             username: req.body.username,
             password: req.body.password,
 
         })
-        // set up sessions with a 'loggedIn' variable set to 'true'
+        // set up sessions with a 'loggedIn' variable set to 'true' and send back user data a
             req.session.save(() => {
             req.session.user_id = userData.id;
             req.session.username = userData.username;
@@ -80,7 +89,7 @@ router.post('/', async (req, res) => {
     }
 });
 
-// Login
+// Login route for the user
 router.post('/login', async (req, res) => {
     try {
         const userData = await User.findOne({
@@ -123,17 +132,37 @@ router.post('/login', async (req, res) => {
         res.status(400).json(err);
     }
 });
-
+// POST /api/users/logout -- log out an existing user
 router.post('logout', (req, res) => {
     // destroy session when user logs out.
     if (req.session.loggedIn) {
         req.session.destroy(() => {
+        // 204 status is that a request has succeeded, but client does not need to go to a different page
+        // (200 indicates success and that a newly updated page should be loaded, 201 is for a resource being created)
             res.status(204).end();
         });
     } else {
+        // if there is no session, then the logout request will send back a no resource found status
         res.status(404).end();
     }
 })
+// DELETE /api/users/1 -- delete an existing user
+router.delete('/id', withAuth, async (req, res) => {
+    try {
+        const userData = await User.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        if (!userData) {
+            res.status(404).json({ message: 'No User found with this id.'});
+            return;
+        }
+        res.json(userData)
+    } catch (err) {
+        res.status(400).json(err);
+    }
+});
 
 
 module.exports = router;

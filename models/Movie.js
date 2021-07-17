@@ -45,6 +45,13 @@ Movie.init({
       key: 'id'
     }
   },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id'
+      }
+  },
   watched: {
     type: DataTypes.BOOLEAN,
     default: false
