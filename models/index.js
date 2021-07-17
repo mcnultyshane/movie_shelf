@@ -8,6 +8,12 @@ User.hasOne(Shelf, {
     onDelete: 'Cascade'
 });
 
+User.hasMany(Movie, {
+    foreignKey: 'user_id',
+    onDelete: 'Cascade'
+});
+
+
 Shelf.belongsTo(User, {
     foreignKey: 'user_id'
 });
@@ -19,6 +25,10 @@ Shelf.hasMany(Movie, {
 
 Movie.belongsTo(Shelf, {
     foreignKey: 'shelf_id'
+})
+
+Movie.belongsTo(User, {
+    foreignKey: 'user_id'
 })
 
 module.exports = {

@@ -5,7 +5,11 @@
     "poster_path": "https://image.tmdb.org/t/p/w400/qAZ0pzat24kLdO3o8ejmbLxyOac.jpg",
     "genre_id": 28,
     "release_date": "2021-07-07",
-    "popularity": 9790.858
+    "popularity": 9790.858,
+    "shelf_id":1,
+    "user_id":1
+
+
   },
   {
     "title": "One Flew Over the Cuckoo's Nest",
@@ -13,7 +17,9 @@
     "poster_path": "https://image.tmdb.org/t/p/w400/3jcbDmRFiQ83drXNOvRDeKHxS0C.jpg",
     "genre_id":18,
     "release_date": "1975-11-18",
-    "popularity": 14.636
+    "popularity": 14.636,
+    "shelf_id":1,
+    "user_id":1
   },
   {
     "title": "Taxi Driver",
@@ -21,7 +27,9 @@
     "poster_path": "https://image.tmdb.org/t/p/w400/ekstpH614fwDX8DUln1a2Opz0N8.jpg",
     "genre_id": 80,
     "release_date": "1976-02-09",
-    "popularity": 24.352
+    "popularity": 24.352,
+    "shelf_id":2,
+    "user_id":2
   },
   {
     "title": "The Return of the Living Dead",
@@ -29,7 +37,9 @@
     "poster_path": "https://image.tmdb.org/t/p/w400/qVTFBabgnWz4jZ8wOQRYZI5EITF.jpg",
     "genre_id": 35,
     "release_date": "1985-04-25",
-    "popularity": 31.944
+    "popularity": 31.944,
+    "shelf_id":3,
+    "user_id":3
   },
   {
     "title": "Armageddon",
@@ -37,7 +47,9 @@
     "poster_path": "https://image.tmdb.org/t/p/w400/qcF8qt8toajvQllOMVRCUqZCxjV.jpg",
     "genre_id": 28,
     "release_date": "1998-07-01",
-    "popularity": 34.056
+    "popularity": 34.056,
+    "shelf_id":1,
+    "user_id":1
   },
   {
     "title": "Forbidden Planet",
@@ -45,7 +57,9 @@
     "poster_path": "https://image.tmdb.org/t/p/w400/aq0OQfRS7hDDI8vyD0ICbH9eguC.jpg",
     "genre_id": 878,
     "release_date": "1956-03-23",
-    "popularity": 9.537
+    "popularity": 9.537,
+    "shelf_id":4,
+    "user_id":4
   },
   {
     "title": "Hackers",
@@ -53,7 +67,9 @@
     "poster_path": "https://image.tmdb.org/t/p/w400/qfx2EENW1sOpKNVKLzr7VOhlxkt.jpg",
     "genre_id": 28,
     "release_date": "1995-09-14",
-    "popularity": 10.272
+    "popularity": 10.272,
+    "shelf_id":5,
+    "user_id":5
   },
   {
     "title": "The Texas Chain Saw Massacre",
@@ -61,7 +77,9 @@
     "poster_path": "https://image.tmdb.org/t/p/w400/9s8uSm5K1W0vhGPHv2icM6SFib8.jpg",
     "genre_id": 27 ,
     "release_date": "1974-10-01",
-    "popularity": 25.102
+    "popularity": 25.102,
+    "shelf_id":6,
+    "user_id":6
   },
   {
     "title": "Death Wish",
@@ -69,6 +87,8 @@
     "poster_path": "https://image.tmdb.org/t/p/w400/3dXhSziiXQv1VQdopz9ompScKVa.jpg",
     "genre_id": 28,
     "release_date": "1974-07-24",
-    "popularity": 11.809
+    "popularity": 11.809,
+    "shelf_id":5,
+    "user_id":5
   }
 ]
