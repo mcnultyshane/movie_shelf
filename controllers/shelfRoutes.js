@@ -40,5 +40,15 @@ router.get('/', withAuth, async (req, res) => {
     }
 });
 
-// a route to view the user's qrcode??
+// a route to 
 // a route to view the search page
+
+module.exports = router;
+
+
+
+
+
+
+
+// a route to view the user's qrcode??
