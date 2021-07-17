@@ -89,7 +89,7 @@ router.post('/', async (req, res) => {
     }
 });
 
-// Login route for the user
+// Login route for the user -->/api/users/login
 router.post('/login', async (req, res) => {
     try {
         const userData = await User.findOne({
