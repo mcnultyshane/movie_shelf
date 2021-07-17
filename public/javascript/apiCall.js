@@ -50,14 +50,14 @@ showMovies = (movies) => {
         "is-flex-direction-row"
       );
       movieCard.innerHTML = `
-        <div id="flag" class="card mx-6">
+        <div id="flag" class="card mx-3">
           <div class="card-image">
-            <figure class="image is-4by5">
+            <figure class="image is-200x296">
               <img src="https://image.tmdb.org/t/p/w400/${movie.poster_path}" alt="Placeholder image">
             </figure>
           </div>
           <div class="media-content">
-                <p class="title is-4">${movie.title}</p>
+                <p class="title has-text-centered">${movie.title}</p>
           </div>
 
 
@@ -65,7 +65,7 @@ showMovies = (movies) => {
       </div>
       <footer class="card-footer">
         <a href="#" class="card-footer-item">Save</a>
-        <a href="#" class="card-footer-item">Edit</a>
+      
         <a href="#" class="card-footer-item">Delete</a>
       </footer>
     </div>
