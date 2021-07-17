@@ -4,7 +4,7 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
     
-        res.render('sandbox');
+        res.render('apiCall');
       });
 
 module.exports = router;
