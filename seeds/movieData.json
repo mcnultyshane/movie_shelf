@@ -1,0 +1,74 @@
+[
+  {
+    "title": "Black Widow",
+    "overview": "Natasha Romanoff, also known as Black Widow, confronts the darker parts of her ledger when a dangerous conspiracy with ties to her past arises. Pursued by a force that will stop at nothing to bring her down, Natasha must deal with her history as a spy and the broken relationships left in her wake long before she became an Avenger.",
+    "poster_path": "https://image.tmdb.org/t/p/w400/qAZ0pzat24kLdO3o8ejmbLxyOac.jpg",
+    "genre_id": 28,
+    "release_date": "2021-07-07",
+    "popularity": 9790.858
+  },
+  {
+    "title": "One Flew Over the Cuckoo's Nest",
+    "overview": "While serving time for insanity at a state mental hospital, implacable rabble-rouser, Randle Patrick McMurphy, inspires his fellow patients to rebel against the authoritarian rule of head nurse, Mildred Ratched.",
+    "poster_path": "https://image.tmdb.org/t/p/w400/3jcbDmRFiQ83drXNOvRDeKHxS0C.jpg",
+    "genre_id":18,
+    "release_date": "1975-11-18",
+    "popularity": 14.636
+  },
+  {
+    "title": "Taxi Driver",
+    "overview": "A mentally unstable Vietnam War veteran works as a night-time taxi driver in New York City where the perceived decadence and sleaze feed his urge for violent action, attempting to save a preadolescent prostitute in the process.",
+    "poster_path": "https://image.tmdb.org/t/p/w400/ekstpH614fwDX8DUln1a2Opz0N8.jpg",
+    "genre_id": 80,
+    "release_date": "1976-02-09",
+    "popularity": 24.352
+  },
+  {
+    "title": "The Return of the Living Dead",
+    "overview": "When foreman Frank shows new employee Freddy a secret military experiment in a supply warehouse in Louisville, Kentucky, the two klutzes accidentally release a gas that reanimates corpses into flesh-eating zombies. As the epidemic spreads throughout the town, and the creatures satisfy their hunger in gory and outlandish ways, Frank and Freddy fight to survive with the help of their boss and a mysterious mortician.",
+    "poster_path": "https://image.tmdb.org/t/p/w400/qVTFBabgnWz4jZ8wOQRYZI5EITF.jpg",
+    "genre_id": 35,
+    "release_date": "1985-04-25",
+    "popularity": 31.944
+  },
+  {
+    "title": "Armageddon",
+    "overview": "When an asteroid threatens to collide with Earth, NASA honcho Dan Truman determines the only way to stop it is to drill into its surface and detonate a nuclear bomb. This leads him to renowned driller Harry Stamper, who agrees to helm the dangerous space mission provided he can bring along his own hotshot crew. Among them is the cocksure A.J. who Harry thinks isn't good enough for his daughter, until the mission proves otherwise.",
+    "poster_path": "https://image.tmdb.org/t/p/w400/qcF8qt8toajvQllOMVRCUqZCxjV.jpg",
+    "genre_id": 28,
+    "release_date": "1998-07-01",
+    "popularity": 34.056
+  },
+  {
+    "title": "Forbidden Planet",
+    "overview": "Starship C57D travels to planet Altair 4 in search of the crew of spaceship \"Bellerophon,\" a scientific expedition that has been missing for 20 years, only to find themselves unwelcome by the expedition's lone survivor and warned of destruction by an invisible force if they don't turn back immediately.",
+    "poster_path": "https://image.tmdb.org/t/p/w400/aq0OQfRS7hDDI8vyD0ICbH9eguC.jpg",
+    "genre_id": 878,
+    "release_date": "1956-03-23",
+    "popularity": 9.537
+  },
+  {
+    "title": "Hackers",
+    "overview": "Along with his new friends, a teenager who was arrested by the US Secret Service and banned from using a computer for writing a computer virus discovers a plot by a nefarious hacker, but they must use their computer skills to find the evidence while being pursued by the Secret Service and the evil computer genius behind the virus.",
+    "poster_path": "https://image.tmdb.org/t/p/w400/qfx2EENW1sOpKNVKLzr7VOhlxkt.jpg",
+    "genre_id": 28,
+    "release_date": "1995-09-14",
+    "popularity": 10.272
+  },
+  {
+    "title": "The Texas Chain Saw Massacre",
+    "overview": "When Sally hears that her grandfather's grave may have been vandalized, she and her paraplegic brother, Franklin, set out with their friends to investigate. After a detour to their family's old farmhouse, they discover a group of crazed, murderous outcasts living next door. As the group is attacked one by one by the chainsaw-wielding Leatherface, who wears a mask of human skin, the survivors must do everything they can to escape.",
+    "poster_path": "https://image.tmdb.org/t/p/w400/9s8uSm5K1W0vhGPHv2icM6SFib8.jpg",
+    "genre_id": 27 ,
+    "release_date": "1974-10-01",
+    "popularity": 25.102
+  },
+  {
+    "title": "Death Wish",
+    "overview": "After his wife is murdered by street punks, a pacifistic New York City architect becomes a one-man vigilante squad, prowling the streets for would-be muggers after dark.",
+    "poster_path": "https://image.tmdb.org/t/p/w400/3dXhSziiXQv1VQdopz9ompScKVa.jpg",
+    "genre_id": 28,
+    "release_date": "1974-07-24",
+    "popularity": 11.809
+  }
+]
