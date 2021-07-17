@@ -147,7 +147,8 @@ router.post('logout', (req, res) => {
     }
 })
 // DELETE /api/users/1 -- delete an existing user
-router.delete('/id', withAuth, async (req, res) => {
+router.delete('/:id', async (req, res) => {
+    console.log("here");
     try {
         const userData = await User.destroy({
             where: {
