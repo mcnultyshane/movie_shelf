@@ -67,7 +67,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // POST /api/users -- add a new User
-router.post('/', async (req, res) => {
+router.post('/signup', async (req, res) => {
     try {
         // create method
         // expects an object in form {username: 'example', password: 'passwordExample'}
