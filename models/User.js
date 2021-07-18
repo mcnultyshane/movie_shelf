@@ -24,6 +24,9 @@ class User extends Model {
         // prevents duplicate usernames in the db
         unique: true,
         allowNull: false,
+        validate: {
+          isAlphanumeric: true
+        }
       },
       password: {
         type: DataTypes.STRING,
