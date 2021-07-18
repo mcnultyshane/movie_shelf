@@ -26,7 +26,7 @@ Movie.init({
     type: DataTypes.STRING,
   },
 
-  genreId: {
+  genre_id: {
     type: DataTypes.INTEGER,
   },
 
@@ -54,12 +54,12 @@ Movie.init({
   },
   watched: {
     type: DataTypes.BOOLEAN,
-    default: false
+    defaultValue: false
   },
 
   on_deck: {
     type: DataTypes.BOOLEAN,
-    default: false
+    defaultValue: false
   }
 
   

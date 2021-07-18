@@ -28,8 +28,8 @@
     "genre_id": 80,
     "release_date": "1976-02-09",
     "popularity": 24.352,
-    "shelf_id":2,
-    "user_id":2
+    "shelf_id":1,
+    "user_id":1
   },
   {
     "title": "The Return of the Living Dead",
@@ -38,8 +38,8 @@
     "genre_id": 35,
     "release_date": "1985-04-25",
     "popularity": 31.944,
-    "shelf_id":3,
-    "user_id":3
+    "shelf_id":1,
+    "user_id":1
   },
   {
     "title": "Armageddon",
@@ -58,8 +58,8 @@
     "genre_id": 878,
     "release_date": "1956-03-23",
     "popularity": 9.537,
-    "shelf_id":4,
-    "user_id":4
+    "shelf_id":1,
+    "user_id":1
   },
   {
     "title": "Hackers",
@@ -68,8 +68,8 @@
     "genre_id": 28,
     "release_date": "1995-09-14",
     "popularity": 10.272,
-    "shelf_id":5,
-    "user_id":5
+    "shelf_id":1,
+    "user_id":1
   },
   {
     "title": "The Texas Chain Saw Massacre",
@@ -78,8 +78,8 @@
     "genre_id": 27 ,
     "release_date": "1974-10-01",
     "popularity": 25.102,
-    "shelf_id":6,
-    "user_id":6
+    "shelf_id":1,
+    "user_id":1
   },
   {
     "title": "Death Wish",
@@ -88,7 +88,7 @@
     "genre_id": 28,
     "release_date": "1974-07-24",
     "popularity": 11.809,
-    "shelf_id":5,
-    "user_id":5
+    "shelf_id":1,
+    "user_id":1
   }
 ]
