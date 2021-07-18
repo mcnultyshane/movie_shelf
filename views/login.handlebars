@@ -1,20 +1,38 @@
- <body>
-    <p id="title">Login</p>
+<body>
+  <p id='title'>Login</p>
+  <form class='login-form'>
+    <div class='container'>
+      <section class='column is-4 is-offset-4'>
 
-    <div class="container">
-      <section class="column is-4 is-offset-4">
-      <div id="input1">
-        <input class="input is-large" id="username-login" type="text" placeholder="userame" />
-      </div>
+        <div id='input1'>
+          <input
+            class='input is-large'
+            id='username-login'
+            type='text'
+            placeholder='username'
+          />
+        </div>
 
-      <div id="input1">
-        <input class="input is-large" id="password-login" type="text" placeholder="password" />
-      </div>
+        <div id='input1'>
+          <input
+            class='input is-large'
+            id='password-login'
+            type='password'
+            placeholder='password'
+          />
+        </div>
 
-      <div id="submitbutton">
-        <button class="button is-ghost is-large">submit</button>
-      </div>
-    </section>
+        <div>
+          <button
+            id='submitbutton'
+            class='button is-ghost is-large'
+            type='submit'
+          >Submit</button>
+        </div>
+
+      </section>
     </div>
-    <footer></footer>
-  </body>
+  </form>
+  <footer></footer>
+</body>
+<script src='/javascript/login.js'></script>

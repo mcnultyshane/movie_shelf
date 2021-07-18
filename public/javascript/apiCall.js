@@ -52,7 +52,7 @@ showMovies = (movies) => {
 
         <a href="#" class="card-footer-item">Delete</a>
       </footer>
-    </div>
+      </div>
   `;
 		titleEl.append(movieCard);
 	});

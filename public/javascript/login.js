@@ -1,18 +1,24 @@
+// const submitEl = document.getElementById('#submitbutton');
+
 const loginFormHandler = async (event) => {
   event.preventDefault();
 
+  console.log('click');
   const username = document.querySelector("#username-login").value.trim();
   const password = document.querySelector("#password-login").value.trim();
 
+    console.log(username);
+    console.log(password);
   if (username && password) {
-    const response = await fetch("/api/users/login", {
-      metohd: "POST",
+    console.log('here');
+    const response = await fetch("/api/user/login", {
+      method: "POST",
       body: JSON.stringify({ username, password }),
-      headeers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json" },
     });
 
     if (response.ok) {
-      document.location.replace("/profile");
+      document.location.replace("/shelf");
     } else {
       alert(response.statusText);
     }
@@ -20,6 +26,5 @@ const loginFormHandler = async (event) => {
 };
 
 document 
-  .querySelector(".login-form")
-  .addEventListener(".submit", loginFormHandler)
+  .querySelector('.login-form').addEventListener('submit', loginFormHandler)
 

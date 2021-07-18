@@ -11,11 +11,11 @@ router.get('/', withAuth, async (req, res) => {
             },
             attributes: [
                 'id',
-                'created_at'
+                // 'created_at'
             ],
             include: [{
                 model: Movie,
-                attributes: ['id', 'title', 'overview', 'poster_path', 'genreId', 'release_date', 'popularity', 'shelf_id', 'watched', 'on_deck'],
+                attributes: ['id', 'title', 'overview', 'poster_path', 'genre_id', 'release_date', 'popularity', 'shelf_id', 'watched', 'on_deck'],
                 include: {
                     model: User,
                     attributes: ['id', 'username']

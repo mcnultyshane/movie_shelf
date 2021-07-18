@@ -17,7 +17,7 @@ Genre.init({
         type: DataTypes.INTEGER,
         references: {
             model: 'movie',
-            key: 'genreID'
+            key: 'genre_id'
         },
     title :{
         type: DataTypes.STRING,

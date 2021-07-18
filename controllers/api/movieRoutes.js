@@ -14,10 +14,11 @@ router.get('/', async (req, res) => {
             // Query configuration
             // from the movie table
             attributes:[
-                'id', 'title', 'overview', 'poster_path', 'genreID', 'release_date', 'popularity', 'shelf_id', 'user_id', 'watched', 'on_deck', 'created_at' 
+                'id', 'title', 'overview', 'poster_path', 'genre_id', 'release_date', 'popularity', 'shelf_id', 'user_id', 'watched', 'on_deck', 
             ],
+            // 'created_at' 
             // order the movies from most recent to least
-            order: [[ 'created_at', 'DESC']],
+            // order: [[ 'created_at', 'DESC']],
             // From the User_table, include the movie creator's username
             include: [{
                 model: User,
@@ -45,8 +46,9 @@ router.get('/:id', async (req, res) => {
             // Query configuration
             // from the movie table
             attributes:[
-                'id', 'title', 'overview', 'poster_path', 'genreID', 'release_date', 'popularity', 'shelf_id', 'user_id', 'watched', 'on_deck', 'created_at' 
+                'id', 'title', 'overview', 'poster_path', 'genre_id', 'release_date', 'popularity', 'shelf_id', 'user_id', 'watched', 'on_deck',  
             ],
+            // 'created_at'
             include: [{
                 model: User,
                 attributes: ['username']
@@ -74,7 +76,7 @@ router.post('/', withAuth, async (req, res) => {
             title: req.body.title,
             overview: req.body.overview,
             poster_path: req.body.poster_path,
-            genreId: req.body.genreId,
+            genre_id: req.body.genre_id,
             release_date: req.body.release_date,
             popularity: req.body.popularity,
             shelf_id: req.session.shelf_id,
@@ -94,6 +96,7 @@ router.post('/', withAuth, async (req, res) => {
 // delete a movie
 router.delete('/:id', withAuth, async (req, res) => {
     try {
+
         const movieData = await Movie.destroy({
             where: {
                 id: req.params.id

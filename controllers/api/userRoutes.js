@@ -44,7 +44,7 @@ router.get('/:id', async (req, res) => {
                 },
                 {
                     model: Movie,
-                    attributes: ['id', 'title', 'overview', 'poster_path', 'genreId', 'release_date', 'popularity', 'shelf_id', 'watched', 'on_deck'],
+                    attributes: ['id', 'title', 'overview', 'poster_path', 'genre_id', 'release_date', 'popularity', 'shelf_id', 'watched', 'on_deck'],
                     include: {
                         model: Shelf,
                         attributes: ['user_id']
@@ -147,7 +147,8 @@ router.post('logout', (req, res) => {
     }
 })
 // DELETE /api/users/1 -- delete an existing user
-router.delete('/id', withAuth, async (req, res) => {
+router.delete('/:id', async (req, res) => {
+    console.log("here");
     try {
         const userData = await User.destroy({
             where: {
@@ -155,7 +156,7 @@ router.delete('/id', withAuth, async (req, res) => {
             }
         })
         if (!userData) {
-            res.status(404).json({ message: 'No User found with this id.'});
+            res.status(404).json('No User found with this id.');
             return;
         }
         res.json(userData)
