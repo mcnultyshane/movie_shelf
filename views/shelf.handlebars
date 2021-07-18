@@ -2,31 +2,13 @@
 
 {{log shelves.[0].movies.[0]}}
 
-{{!-- 
-<div class="box">
-    <div class="columns is-flex-wrap-wrap is-flex-direction-row" >
-        {{#each shelves.[0].movies}}
-        <div class = "column is-one-quarter is-flex-wrap-wrap is-flex-direction-row">
-            <div class="card mx-3">
-                <div class="card-image">
-                    <figure class="image is-200x296">
-                    <img src="{{poster_path}}" alt="Placeholder image">
-                    </figure>
-                </div>
-                <div class="media-content">
-                        <p class="title has-text-centered">{{title}}</p>
-                </div>
-            </div>
-        </div>
-        {{/each}}
-    </div>
-</div> --}}
+
 
 
             <h1 class="title has-text-centered redText">Movies I've Watched</h1>
 
       <div class="columns is-mobile is-flex-wrap-wrap is-flex-direction-row"> 
-{{#each shelves.[0].movies}}
+{{#each shelvçes.[0].movies}}
         <div class="column is-one-third-mobile is-one-third-tablet is-2-desktop is-2-widescreen is-1.5-fullhd">
           <article>
             <figure class="image is-200x296">
