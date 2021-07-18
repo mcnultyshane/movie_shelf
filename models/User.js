@@ -21,13 +21,19 @@ class User extends Model {
       },
       username: {
         type: DataTypes.STRING,
+        // prevents duplicate usernames in the db
+        unique: true,
         allowNull: false,
+        validate: {
+          isAlphanumeric: true
+        }
       },
       password: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-          len: [6],
+          // must be longer than 8 characters
+          len: [8],
         },
       },
     },

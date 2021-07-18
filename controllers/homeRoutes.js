@@ -4,6 +4,7 @@ const withAuth = require('../utils/auth');
 
 // Render the homepage
 router.get('/', async (req, res) => {
+  // Send the rendered Handlebars.js template back as the response
   res.render('homepage');
 });
 
@@ -17,8 +18,6 @@ router.get('/', async (req, res) => {
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/');
-
-
     return;
   }
 
