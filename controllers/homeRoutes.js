@@ -4,8 +4,15 @@ const withAuth = require('../utils/auth');
 
 // Render the homepage
 router.get('/', async (req, res) => {
+  // if (req.session.loggedIn) {
+  //   res.redirect('/shelf', {
+  //     loggedIn: req.session.loggedIn
+  //   });
+  //   return;
+  // }else{
   // Send the rendered Handlebars.js template back as the response
   res.render('homepage');
+  // }
 });
 
 // router.get('/', async (req, res) => {
@@ -17,7 +24,9 @@ router.get('/', async (req, res) => {
 // render the login page --> if the user is logged in, redirect to the homepage.
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect('/');
+    res.redirect('/shelf', {
+      loggedIn: req.session.loggedIn
+    });
     return;
   }
 
@@ -28,7 +37,9 @@ router.get('/login', (req, res) => {
 // render the signup page --> if the user is logged in, redirect to the homepage.
 router.get('/signup', (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect('/');
+    res.redirect('/', {
+      loggedIn: req.session.loggedIn
+    });
     return;
   }
 
