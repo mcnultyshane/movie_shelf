@@ -21,6 +21,8 @@ class User extends Model {
       },
       username: {
         type: DataTypes.STRING,
+        // prevents duplicate usernames in the db
+        unique: true,
         allowNull: false,
       },
       password: {
