@@ -1,23 +1,40 @@
-{{!-- <h1 class = "title">Hello World</h1> --}}
+
+{{>navbar}}
 
 {{log shelves.[0].movies.[0]}}
 
+<div class="container is-fluid">
+    <section>
 
-
-
-            <h1 class="title has-text-centered redText">Movies I've Watched</h1>
-
+<h1 class="title has-text-centered redText">On Deck</h1>
       <div class="columns is-mobile is-flex-wrap-wrap is-flex-direction-row"> 
-{{#each shelvçes.[0].movies}}
+{{#each shelves.[0].movies}}
+{{#if on_deck}}
         <div class="column is-one-third-mobile is-one-third-tablet is-2-desktop is-2-widescreen is-1.5-fullhd">
           <article>
             <figure class="image is-200x296">
               <img src="{{poster_path}}" />
             </figure>
             <h2 class="subtitle has-text-centered redText">{{title}}</h2>
-
           </article>
         </div>
+{{/if}}
+{{/each}}
+      </div>
+
+<h1 class="title has-text-centered redText">Movies I've Watched</h1>
+      <div class="columns is-mobile is-flex-wrap-wrap is-flex-direction-row"> 
+{{#each shelves.[0].movies}}
+{{#if watched}}
+        <div class="column is-one-third-mobile is-one-third-tablet is-2-desktop is-2-widescreen is-1.5-fullhd">
+          <article>
+            <figure class="image is-200x296">
+              <img src="{{poster_path}}" />
+            </figure>
+            <h2 class="subtitle has-text-centered redText">{{title}}</h2>
+          </article>
+        </div>
+{{/if}}
 {{/each}}
       </div>
     </section>
