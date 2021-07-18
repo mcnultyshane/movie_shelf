@@ -4,6 +4,7 @@ const {
     Shelf,
     Movie
 } = require('../../models');
+const bcrypt = require('bcrypt');
 const withAuth = require('../../utils/auth')
 
 // Get /api/users -- get all users
@@ -38,7 +39,7 @@ router.get('/:id', async (req, res) => {
                 id: req.params.id
             },
             include: [{
-                // include the user's shelf, and the movies on their shelf
+                    // include the user's shelf, and the movies on their shelf
                     model: Shelf,
                     attributes: ['id', 'user_id']
                 },
@@ -76,7 +77,7 @@ router.post('/', async (req, res) => {
 
         })
         // set up sessions with a 'loggedIn' variable set to 'true' and send back user data a
-            req.session.save(() => {
+        req.session.save(() => {
             req.session.user_id = userData.id;
             req.session.username = userData.username;
             req.session.loggedIn = true;
@@ -106,7 +107,7 @@ router.post('/login', async (req, res) => {
             return;
         }
 
-        const validPassword = await userData.checkPassword(req.body.password);
+        const validPassword = await bcrypt.compare(req.body.password, userData.password)
 
         if (!validPassword) {
             res
@@ -122,7 +123,7 @@ router.post('/login', async (req, res) => {
             req.session.username = userData.username;
             req.session.loggedIn = true;
 
-            res.json({
+            res.status(200).json({
                 user: userData,
                 message: 'You are now logged in!'
             });
@@ -137,8 +138,8 @@ router.post('logout', (req, res) => {
     // destroy session when user logs out.
     if (req.session.loggedIn) {
         req.session.destroy(() => {
-        // 204 status is that a request has succeeded, but client does not need to go to a different page
-        // (200 indicates success and that a newly updated page should be loaded, 201 is for a resource being created)
+            // 204 status is that a request has succeeded, but client does not need to go to a different page
+            // (200 indicates success and that a newly updated page should be loaded, 201 is for a resource being created)
             res.status(204).end();
         });
     } else {
@@ -147,7 +148,7 @@ router.post('logout', (req, res) => {
     }
 })
 // DELETE /api/users/1 -- delete an existing user
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
     console.log("here");
     try {
         const userData = await User.destroy({

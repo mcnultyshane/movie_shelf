@@ -32,7 +32,8 @@ class User extends Model {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-          len: [6],
+          // must be longer than 8 characters
+          len: [8],
         },
       },
     },
