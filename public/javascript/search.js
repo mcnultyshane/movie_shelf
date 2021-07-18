@@ -50,7 +50,7 @@ showMovies = (movies) => {
 function movieSearchFormSubmit(event) {
     event.preventDefault();
 
-    let movieSearchEl = document.querySelector('#movie-search').nodeValue.trim();
+    let movieSearchEl = document.querySelector('#movie-search').value.trim();
 
     if (!movieSearchEl) {
         console.error('Please enter a movie to search');

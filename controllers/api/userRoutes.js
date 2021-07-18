@@ -76,7 +76,7 @@ router.post('/signup', async (req, res) => {
             password: req.body.password,
 
         })
-        // set up sessions with a 'loggedIn' variable set to 'true' and send back user data a
+        // set up sessions with a 'loggedIn' variable set to 'true' and send back user data 
         req.session.save(() => {
             req.session.user_id = userData.id;
             req.session.username = userData.username;
