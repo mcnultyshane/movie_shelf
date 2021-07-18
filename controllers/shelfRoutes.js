@@ -40,8 +40,12 @@ router.get('/', withAuth, async (req, res) => {
     }
 });
 
-// a route to 
-// a route to view the search page
+// a route to search for movies from the shelf page
+router.get('/search', withAuth, async (req, res) => {
+    res.render('search');
+  });
+
+
 
 module.exports = router;
 
