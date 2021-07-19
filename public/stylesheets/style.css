@@ -66,7 +66,7 @@ button:hover {
 #loginbutton {
     text-align: center;
     position: relative;
-    /* width: 30%; */
+
     display: block;
     margin: 0 auto;
     padding-bottom: 75px;
@@ -76,7 +76,7 @@ button:hover {
 #signupbutton {
     text-align: center;
     position: relative;
-    /* width: 30%; */
+ 
     display: block;
     margin: 0 auto;
 }
@@ -128,5 +128,13 @@ button:hover {
   }
 
   .redText{
-      color:var(--red)
+      color:var(--red);
+  }
+
+  .navbar{
+    background: none;
+  }
+
+  .navbar-item button{
+      color: var(--red)!important;
   }

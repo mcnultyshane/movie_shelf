@@ -42,7 +42,9 @@ router.get('/', withAuth, async (req, res) => {
 
 // a route to search for movies from the shelf page
 router.get('/search', withAuth, async (req, res) => {
-    res.render('search');
+    res.render('search',{
+        loggedIn: req.session.loggedIn
+    });
   });
 
 
