@@ -141,7 +141,7 @@ router.post('/login', async (req, res) => {
     }
 });
 // POST /api/users/logout -- log out an existing user
-router.post('logout', (req, res) => {
+router.post('/logout', (req, res) => {
     // destroy session when user logs out.
     if (req.session.loggedIn) {
         req.session.destroy(() => {
