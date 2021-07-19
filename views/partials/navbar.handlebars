@@ -14,11 +14,11 @@
     
       <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-          <a href="/" class="navbar-item">
+          <a href="/shelf" class="navbar-item">
             Home
           </a>
     
-          <a href="/search"class="navbar-item">
+          <a href="/shelf/search"class="navbar-item">
             Explore
           </a>
           </div>
@@ -27,13 +27,17 @@
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="buttons">
-              <a class="button is-ghost">
+              <a class="button is-ghost" href="/signup">
                 <strong>Sign up</strong>
+                
+                
               </a>
-              <a class="button is-ghost">
-                <strong>Log in</strong>
-              </a>
-            </div>
+              {{#if loggedIn}}
+              <a class="button is-ghost btn-no-style" id="logout"><strong>logout</strong></a>
+              {{else}}
+              <a class="button is-ghost" href="/login"><strong>login</strong></a>
+
+
           </div>
         </div>
       </div>

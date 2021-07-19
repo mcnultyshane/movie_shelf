@@ -7,7 +7,8 @@ const apiRoutes = require('./api');
 // Homepage routes
 const homeRoutes = require('./homeRoutes');
 // Shelf routes
-const shelfRoutes = require('./shelfRoutes')
+const shelfRoutes = require('./shelfRoutes');
+
 
 // Define the path for the server for the API routes
 router.use('/api', apiRoutes);

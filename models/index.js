@@ -1,6 +1,7 @@
 const Movie = require('./Movie');
 const Shelf = require('./Shelf');
 const User = require('./User');
+const QrCode = require('./QrCode');
 // const Genre = require('./Genre')
 
 User.hasOne(Shelf, {
@@ -13,7 +14,6 @@ User.hasMany(Movie, {
     onDelete: 'Cascade'
 });
 
-
 Shelf.belongsTo(User, {
     foreignKey: 'user_id'
 });
@@ -25,14 +25,26 @@ Shelf.hasMany(Movie, {
 
 Movie.belongsTo(Shelf, {
     foreignKey: 'shelf_id'
-})
+});
 
 Movie.belongsTo(User, {
     foreignKey: 'user_id'
-})
+});
+
+Shelf.hasOne(QrCode, {
+    foreignKey: 'shelf_id'
+});
+
+QrCode.belongsTo(Shelf, {
+    foreignKey: 'shelf_id'
+});
+
+
+
 
 module.exports = {
     User,
     Movie,
-    Shelf
+    Shelf,
+    QrCode
 };

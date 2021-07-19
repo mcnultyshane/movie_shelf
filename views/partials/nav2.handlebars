@@ -1,0 +1,55 @@
+<div class="hero-head">
+  <nav class="navbar">
+      <div class="container">
+          <div class="navbar-brand">
+              <a class="navbar-item" href="/shelf">
+                  <span class="is-size-1">Movie Shelf</span>
+              </a>
+              <span class="navbar-burger burger" data-target="navbarMenu">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+              </span>
+          </div>
+          <div id="navbarMenu" class="navbar-menu">
+              <div class="navbar-end">
+                  <span class="navbar-item">
+                      <a class="button is-white is-outlined" href="/shelf">
+                          <span>My Shelf</span>
+                      </a>
+                  </span>
+                  <span class="navbar-item">
+                      <a class="button is-white is-outlined" href="/shelf/search">
+                          <span>Browse Movies</span>
+                      </a>
+                  </span>
+                  <span class="navbar-item">
+                      <a class="button is-white is-outlined" href="/users">
+                          <span>Browse Shelves</span>
+                      </a>
+                  </span>
+
+                  {{#if loggedIn}}
+                  <span class="navbar-item">
+                      <a class="button is-white is-outlined" id="logout">
+                          <span>Logout</span>
+                      </a>
+                  </span>
+                  {{else}}
+                    <span class="navbar-item">
+                      <a class="button is-white is-outlined" href="/signup">
+                          <span>Sign Up</span>
+                      </a>
+                  </span>
+                <span class="navbar-item">
+                      <a class="button is-white is-outlined" href="/login">
+                          <span>Login</span>
+                      </a>
+                  </span>
+                  {{/if}}
+              </div>
+          </div>
+      </div>
+  </nav>
+  </div>
+  
