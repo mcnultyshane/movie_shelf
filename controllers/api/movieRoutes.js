@@ -75,7 +75,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // create a new watched movie 
-router.post('/', withAuth, async (req, res) => {
+router.post('/watched', withAuth, async (req, res) => {
     try {
         const movieData = await Movie.create({
             title: req.body.title,
@@ -88,6 +88,28 @@ router.post('/', withAuth, async (req, res) => {
             shelf_id: req.session.shelf_id,
             
             watched: true   
+
+        })
+        res.json(movieData)
+     // if there was a server error, return the error
+    }  catch (err) {
+        console.log(err);
+        res.status(500).json.err
+    }
+});
+router.post('/onDeck', withAuth, async (req, res) => {
+    try {
+        const movieData = await Movie.create({
+            title: req.body.title,
+            overview: req.body.overview,
+            poster_path: req.body.poster_path,
+            // genre_id: req.body.genre_id,
+            release_date: req.body.release_date,
+            // popularity: req.body.popularity,
+            user_id: req.session.user_id,
+            shelf_id: req.session.shelf_id,
+            
+            on_deck: true   
 
         })
         res.json(movieData)

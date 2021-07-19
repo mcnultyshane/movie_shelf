@@ -24,11 +24,12 @@ showMovies = (movies) => {
   let searchedMovies = [];
   searchedMovies.push(movies);
   document.getElementById('movie-list').innerHTML = '';
-  for (var i = 0; i < searchedMovies[0].length; i++) {
-    console.log(searchedMovies[0][i]);
-  }
+  // for (var i = 0; i < searchedMovies[0].length; i++) {
+  //   console.log(searchedMovies[0][i]);
+  // }
 
   console.log(searchedMovies);
+  console.log(this);
   movies.forEach((movie) => {
     const movieCard = document.createElement('div');
     movieCard.classList.add(
@@ -58,7 +59,16 @@ showMovies = (movies) => {
       class="card-footer-item">
       Save</a>
 
-      <a href="#" class="card-footer-item">Delete</a>
+      <a onclick="addOnDeck(event);" 
+      title="${movie.title}"
+      data-overview="${movie.overview}"
+      data-release_date="${movie.release_date}"
+      data-poster_path="https://image.tmdb.org/t/p/w400/${movie.poster_path}"
+      id="add-0ndeck"
+      class="card-footer-item">
+      Delete</a>
+
+
     </footer>
     </div>`;
     movieList.append(movieCard);
