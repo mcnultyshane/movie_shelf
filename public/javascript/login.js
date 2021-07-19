@@ -1,4 +1,4 @@
-// const submitEl = document.getElementById('#submitbutton');
+const submitEl = document.getElementById('#submitbutton');
 
 const loginFormHandler = async (event) => {
   event.preventDefault();
