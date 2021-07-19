@@ -1,11 +1,11 @@
 
 {{>nav2}}
 <div class="container is-fluid">
+{{!-- 
+            <h1 class="title has-text-centered redText">My Shelf</h1> --}}
 
-            <h1 class="title has-text-centered redText">My Shelf</h1>
 
-
-<h1 class="title has-text-centered redText">On Deck</h1>
+<h1 class="title is-size-4-mobile is-underlined has-text-left redText">Want to Watch</h1>
       <div class="columns is-mobile is-flex-wrap-wrap is-flex-direction-row"> 
 {{#each shelves.[0].movies}}
 {{#if on_deck}}
@@ -14,14 +14,14 @@
             <figure class="image is-200x296">
               <img src="{{poster_path}}" />
             </figure>
-            <h2 class="subtitle has-text-centered redText">{{title}}</h2>
+            <h2 class="is-size-6-desktop is-size-7-mobile has-text-centered redText is-family-secondary">{{title}}</h2>
           </article>
         </div>
 {{/if}}
 {{/each}}
       </div>
 
-<h1 class="title has-text-centered redText">Movies I've Watched</h1>
+<h1 class="title is-size-4-mobile is-underlined has-text-left redText">Watched</h1>
       <div class="columns is-mobile is-flex-wrap-wrap is-flex-direction-row"> 
 {{#each shelves.[0].movies}}
 {{#if watched}}
@@ -30,7 +30,7 @@
             <figure class="image is-200x296">
               <img src="{{poster_path}}" />
             </figure>
-            <h2 class="subtitle has-text-centered redText">{{title}}</h2>
+            <p class="is-size-6-desktop is-size-7-mobile has-text-centered redText is-family-secondary">{{title}}</>
           </article>
         </div>
 {{/if}}
