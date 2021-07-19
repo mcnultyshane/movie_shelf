@@ -51,7 +51,6 @@ button:hover {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
 }
 
 #description {
@@ -138,3 +137,20 @@ button:hover {
   .navbar-item button{
       color: var(--red)!important;
   }
+
+  .navtitle {
+    color: linear;
+    font-size: 35px;   
+    background: -webkit-linear-gradient(var(--grey),var(--red));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .shelfheaders {
+    color: var(--blue);
+    text-shadow: 2px 2px 2px var(--black);
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.125;
+}
