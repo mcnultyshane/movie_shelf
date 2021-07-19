@@ -136,23 +136,6 @@ router.post('/login', async (req, res) => {
             return;
         }
 
-        const validPassword = await bcrypt.compare(req.body.password, userData.password)
-
-        if (!validPassword) {
-            res
-                .status(400)
-                .json({
-                    message: 'Incorrect email or password, please try again'
-                });
-            return;
-        }
-        // Once the user successfully logs in, set up the sessions variable 'loggedIn'
-        req.session.save(() => {
-            req.session.user_id = userData.id;
-            req.session.username = userData.username;
-            req.session.loggedIn = true;
-
-
     const validPassword = await bcrypt.compare(
       req.body.password,
       userData.password

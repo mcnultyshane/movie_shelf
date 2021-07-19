@@ -59,7 +59,16 @@ showMovies = (movies) => {
       class="card-footer-item">
       Save</a>
 
-      <a href="#" class="card-footer-item">Delete</a>
+      <a onclick="addOnDeck(event);" 
+      title="${movie.title}"
+      data-overview="${movie.overview}"
+      data-release_date="${movie.release_date}"
+      data-poster_path="https://image.tmdb.org/t/p/w400/${movie.poster_path}"
+      id="add-0ndeck"
+      class="card-footer-item">
+      Delete</a>
+
+
     </footer>
     </div>`;
     movieList.append(movieCard);
