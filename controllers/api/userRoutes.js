@@ -124,7 +124,7 @@ router.post('/login', async (req, res) => {
                 });
             return;
         }
-        // Once the user successfully logs in, set up the sessions variable 'loggedIn
+        // Once the user successfully logs in, set up the sessions variable 'loggedIn'
         req.session.save(() => {
             req.session.user_id = userData.id;
             req.session.username = userData.username;
@@ -144,6 +144,7 @@ router.post('/login', async (req, res) => {
 router.post('/logout', (req, res) => {
     // destroy session when user logs out.
     if (req.session.loggedIn) {
+        console.log(req.session.loggedIn);
         req.session.destroy(() => {
             // 204 status is that a request has succeeded, but client does not need to go to a different page
             // (200 indicates success and that a newly updated page should be loaded, 201 is for a resource being created)
