@@ -1,11 +1,9 @@
-require('dotenv').config();
-// hid api key in dot.env
-const ApiKey = process.env.DB_API;
+let ApiKey = '';
 const movieList = document.querySelector('#movie-list');
 
 let searchedMovies = [];
 
-function searchApi(movieSearchEl) {
+function searchApi(movieSearchEl, ApiKey) {
   let locQueryUrl = 'https://api.themoviedb.org/3/search/movie?';
 
   locQueryUrl =
@@ -39,9 +37,8 @@ showMovies = (movies) => {
       'is-flex-wrap-wrap',
       'is-flex-direction-row'
     );
-    movieCard.innerHTML = `
-
-      <div id="flag" class="card mx-3">
+    movieCard.innerHTML = 
+    `<div id="flag" class="card mx-3">
         <div class="card-image">
           <figure class="image is-200x296">
             <img src="https://image.tmdb.org/t/p/w400/${movie.poster_path}" alt="Placeholder image">
@@ -63,15 +60,28 @@ showMovies = (movies) => {
 
       <a href="#" class="card-footer-item">Delete</a>
     </footer>
-    </div>
-`;
+    </div>`;
     movieList.append(movieCard);
   });
 };
-
-function movieSearchFormSubmit(event) {
+function getKey(event) {
   event.preventDefault();
-
+  fetch('/api/users/key', {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      ApiKey = data;
+      console.log(ApiKey);
+      movieSearchFormSubmit(ApiKey);
+    });
+}
+function movieSearchFormSubmit(ApiKey) {
   let movieSearchEl = document.querySelector('#movie-search').value.trim();
 
   if (!movieSearchEl) {
@@ -79,9 +89,9 @@ function movieSearchFormSubmit(event) {
     return;
   }
   console.log(movieSearchEl);
-  searchApi(movieSearchEl);
+  searchApi(movieSearchEl, ApiKey);
 }
 
-document
-  .querySelector('#movie-search-form')
-  .addEventListener('submit', movieSearchFormSubmit);
+document.querySelector('#movie-search-form').addEventListener('submit', getKey);
+
+// getKey();
