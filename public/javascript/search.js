@@ -1,4 +1,6 @@
-const ApiKey = '969a67b0e5920fd1dc6347c0c1df0eb9';
+require('dotenv').config();
+// hid api key in dot.env
+const ApiKey = process.env.DB_API;
 const movieList = document.querySelector('#movie-list');
 
 let searchedMovies = [];
