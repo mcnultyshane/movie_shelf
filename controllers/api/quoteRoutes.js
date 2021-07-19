@@ -1,9 +1,7 @@
 const router = require('express').Router();
 const movieQuotes = require('popular-movie-quotes');
-
 router.get('/', async (req, res) => {
   try {
-
     quote = await movieQuotes.getRandomQuote();
     res.json(quote);
     // res.render('quotes', {
@@ -14,5 +12,4 @@ router.get('/', async (req, res) => {
     res.status(500).json.err;
   }
 });
-
 module.exports = router;
