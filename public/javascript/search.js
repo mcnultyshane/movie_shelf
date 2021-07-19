@@ -24,40 +24,35 @@ showMovies = (movies) => {
   let searchedMovies = [];
   searchedMovies.push(movies);
   document.getElementById('movie-list').innerHTML = '';
-  // for (var i = 0; i < searchedMovies[0].length; i++) {
-  //   console.log(searchedMovies[0][i]);
-  // }
 
   console.log(searchedMovies);
-  console.log(this);
   movies.forEach((movie) => {
     const movieCard = document.createElement('div');
     movieCard.classList.add(
       'column',
-      'is-one-quarter',
-      'is-flex-wrap-wrap',
-      'is-flex-direction-row'
+      'is-mobile',
+      'is-one-third-tablet',
+      'is-2-desktop',
+      'is-2-widescreen',
+      'is-1.5-fullhd'
     );
     movieCard.innerHTML = 
-    `<div id="flag" class="card mx-3">
-        <div class="card-image">
-          <figure class="image is-200x296">
-            <img src="https://image.tmdb.org/t/p/w400/${movie.poster_path}" alt="Placeholder image">
-          </figure>
-        </div>
-        <div class="media-content">
-              <p class="title has-text-centered">${movie.title}</p>
-        </div>
-      </div>
-    <footer class="card-footer">
+   ` <article>
+    <figure class="image is-200x296">
+      <img src="https://image.tmdb.org/t/p/w400/${movie.poster_path}" />
+    </figure>
+    <h2 class="is-size-6-desktop is-size-7-mobile has-text-centered redText is-family-secondary">${movie.title}</h2>
+  </article>
+  <footer class="card-footer ">
+    
       <a onclick="addWatched(event);" 
       title="${movie.title}"
       data-overview="${movie.overview}"
       data-release_date="${movie.release_date}"
       data-poster_path="https://image.tmdb.org/t/p/w400/${movie.poster_path}"
       id="add-watched"
-      class="card-footer-item">
-      Save</a>
+      class="card-footer-item mx-2 mt-2 is-small is-outlined button is-danger">
+      Watched</a>
 
       <a onclick="addOnDeck(event);" 
       title="${movie.title}"
@@ -65,12 +60,12 @@ showMovies = (movies) => {
       data-release_date="${movie.release_date}"
       data-poster_path="https://image.tmdb.org/t/p/w400/${movie.poster_path}"
       id="add-0ndeck"
-      class="card-footer-item">
-      Delete</a>
+      class="card-footer-item mx-2 mt-2 is-small is-outlined has-text-centered button is-light">
+      Want to watch</a>
 
 
-    </footer>
-    </div>`;
+    </footer>`
+   ;
     movieList.append(movieCard);
   });
 };
