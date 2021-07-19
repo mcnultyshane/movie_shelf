@@ -10,9 +10,11 @@
                   <span></span>
                   <span></span>
               </span>
-          </div>
+          </div>    
+          
           <div id="navbarMenu" class="navbar-menu">
               <div class="navbar-end">
+                  {{#if loggedIn}}
                   <span class="navbar-item">
                       <a class="button is-white is-outlined" href="/shelf">
                           <span>My Shelf</span>
@@ -29,7 +31,7 @@
                       </a>
                   </span>
 
-                  {{#if loggedIn}}
+              
                   <span class="navbar-item">
                       <a class="button is-white is-outlined" id="logout">
                           <span>Logout</span>
@@ -52,4 +54,4 @@
       </div>
   </nav>
   </div>
-  
+ 
