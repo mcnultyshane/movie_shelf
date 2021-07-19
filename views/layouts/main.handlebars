@@ -19,7 +19,10 @@
    <footer></footer>
    
     <script src="/javascript/homepage.js"></script>
-    <script src="/javascript/logout.js"></script>
+    {{#if loggedIn}}
+     <script src="/javascript/logout.js"></script>
+     {{/if}}
+
   
   </body>
 

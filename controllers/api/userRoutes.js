@@ -117,18 +117,38 @@ router.post('/signup', async (req, res) => {
 
 // Login route for the user -->/api/users/login
 router.post('/login', async (req, res) => {
-  try {
-    const userData = await User.findOne({
-      where: {
-        username: req.body.username,
-      },
-    });
-    if (!userData) {
-      res.status(400).json({
-        message: 'Incorrect username or password, please try again',
-      });
-      return;
-    }
+
+    try {
+        const userData = await User.findOne({
+            where: {
+                username: req.body.username
+            }
+        });
+        if (!userData) {
+            res
+                .status(400)
+                .json({
+                    message: 'Incorrect username or password, please try again'
+                });
+            return;
+        }
+
+        const validPassword = await bcrypt.compare(req.body.password, userData.password)
+
+        if (!validPassword) {
+            res
+                .status(400)
+                .json({
+                    message: 'Incorrect email or password, please try again'
+                });
+            return;
+        }
+        // Once the user successfully logs in, set up the sessions variable 'loggedIn'
+        req.session.save(() => {
+            req.session.user_id = userData.id;
+            req.session.username = userData.username;
+            req.session.loggedIn = true;
+
 
     const validPassword = await bcrypt.compare(
       req.body.password,
@@ -157,19 +177,22 @@ router.post('/login', async (req, res) => {
   }
 });
 // POST /api/users/logout -- log out an existing user
-router.post('logout', (req, res) => {
-  // destroy session when user logs out.
-  if (req.session.loggedIn) {
-    req.session.destroy(() => {
-      // 204 status is that a request has succeeded, but client does not need to go to a different page
-      // (200 indicates success and that a newly updated page should be loaded, 201 is for a resource being created)
-      res.status(204).end();
-    });
-  } else {
-    // if there is no session, then the logout request will send back a no resource found status
-    res.status(404).end();
-  }
-});
+
+router.post('/logout', (req, res) => {
+    // destroy session when user logs out.
+    if (req.session.loggedIn) {
+        console.log(req.session.loggedIn);
+        req.session.destroy(() => {
+            // 204 status is that a request has succeeded, but client does not need to go to a different page
+            // (200 indicates success and that a newly updated page should be loaded, 201 is for a resource being created)
+            res.status(204).end();
+        });
+    } else {
+        // if there is no session, then the logout request will send back a no resource found status
+        res.status(404).end();
+    }
+})
+
 // DELETE /api/users/1 -- delete an existing user
 router.delete('/:id', withAuth, async (req, res) => {
   console.log('here');
