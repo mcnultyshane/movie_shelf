@@ -74,20 +74,20 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-// create a new movie
+// create a new watched movie 
 router.post('/', withAuth, async (req, res) => {
     try {
         const movieData = await Movie.create({
             title: req.body.title,
             overview: req.body.overview,
             poster_path: req.body.poster_path,
-            genre_id: req.body.genre_id,
+            // genre_id: req.body.genre_id,
             release_date: req.body.release_date,
-            popularity: req.body.popularity,
+            // popularity: req.body.popularity,
+            user_id: req.session.user_id,
             shelf_id: req.session.shelf_id,
-            user_id: req.session.user_id
-            // watched:
-            // on_deck
+            
+            watched: true   
 
         })
         res.json(movieData)

@@ -76,13 +76,20 @@ router.post('/signup', async (req, res) => {
             password: req.body.password,
 
         })
+        const shelfData = await Shelf.create({
+
+
+        })
+
         // set up sessions with a 'loggedIn' variable set to 'true' and send back user data 
         req.session.save(() => {
             req.session.user_id = userData.id;
+            req.session.shelf_id = shelfData.id;
             req.session.username = userData.username;
             req.session.loggedIn = true;
 
             res.json(userData)
+            res.json(shelfData)
         })
     } catch (err) {
         console.log(err);
