@@ -3,7 +3,17 @@ const { User, Shelf, Movie } = require('../../models');
 const bcrypt = require('bcrypt');
 const withAuth = require('../../utils/auth');
 
-
+router.get('/key', async (req, res) => {
+  try {
+    console.log('here');
+    const apiKey = process.env.DB_API;
+    console.log(apiKey);
+    res.json(apiKey);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json.err;
+  }
+});
 // Get /api/users -- get all users
 router.get('/', async (req, res) => {
   try {
@@ -75,17 +85,7 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-router.get('/key', async (req, res) => {
-    try {
-      console.log('here');
-      const apiKey = process.env.DB_API;
-      console.log(apiKey);
-      res.json(apiKey);
-    } catch (err) {
-      console.log(err);
-      res.status(500).json.err;
-    }
-  });
+
   
 
 // POST /api/users -- add a new User
@@ -97,7 +97,10 @@ router.post('/signup', async (req, res) => {
       username: req.body.username,
       password: req.body.password,
     });
-    const shelfData = await Shelf.create({});
+    const shelfData = await Shelf.create({
+      user_id: userData.id,
+    });
+    console.log(userData.id);
 
     // set up sessions with a 'loggedIn' variable set to 'true' and send back user data
     req.session.save(() => {

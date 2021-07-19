@@ -24,11 +24,12 @@ showMovies = (movies) => {
   let searchedMovies = [];
   searchedMovies.push(movies);
   document.getElementById('movie-list').innerHTML = '';
-  for (var i = 0; i < searchedMovies[0].length; i++) {
-    console.log(searchedMovies[0][i]);
-  }
+  // for (var i = 0; i < searchedMovies[0].length; i++) {
+  //   console.log(searchedMovies[0][i]);
+  // }
 
   console.log(searchedMovies);
+  console.log(this);
   movies.forEach((movie) => {
     const movieCard = document.createElement('div');
     movieCard.classList.add(
