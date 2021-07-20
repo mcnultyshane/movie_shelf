@@ -3,16 +3,16 @@
       <div class="container">
           <div class="navbar-brand">
               <a class="navbar-item" href="/shelf">
-                  <span class="is-size-1">Movie Shelf</span>
+                  <span class="is-size-1" id="title">Movie Shelf</span>
               </a>
-              <span class="navbar-burger burger" data-target="navbarMenu">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-              </span>
+                <a role="button" class="navbar-burger" id="burger" aria-label="menu" aria-expanded="false" data-target="navbar">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                </a>
           </div>    
           
-          <div id="navbarMenu" class="navbar-menu">
+          <div id="nav-links" class="navbar-menu  has-text-right background-transparent ">
               <div class="navbar-end">
                   {{#if loggedIn}}
                   <span class="navbar-item">
@@ -25,11 +25,11 @@
                           <span>Browse Movies</span>
                       </a>
                   </span>
-                  <span class="navbar-item">
+                  {{!-- <span class="navbar-item">
                       <a class="button is-white is-outlined" href="/users">
                           <span>Browse Shelves</span>
                       </a>
-                  </span>
+                  </span> --}}
 
               
                   <span class="navbar-item">
@@ -55,7 +55,7 @@
   </nav>
   <div class="columns">
       <div class="column has-text-centered">
-        <p>Guess the movie: {{>quote}}</p>
+        <p class="has-text-grey-light is-underlined">Guess the movie: {{>quote}}</p>
       </div>
     </div>
   </div>

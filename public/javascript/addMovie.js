@@ -1,5 +1,5 @@
 async function addWatched(event) {
-  console.log('click');
+
   const element = event.target;
 
   const title = element.title;
@@ -8,10 +8,6 @@ async function addWatched(event) {
   const release_date = element.getAttribute('data-release_date');
   const poster_path = element.getAttribute('data-poster_path');
 
-  console.log(title);
-  console.log(overview);
-  console.log(release_date);
-  console.log(poster_path);
 
 
   const response = await fetch('/api/movies/watched', {
@@ -30,7 +26,7 @@ async function addWatched(event) {
 }
 
 async function addOnDeck(event) {
-  console.log('click');
+
   const element = event.target;
 
   const title = element.title;
@@ -39,10 +35,6 @@ async function addOnDeck(event) {
   const release_date = element.getAttribute('data-release_date');
   const poster_path = element.getAttribute('data-poster_path');
 
-  console.log(title);
-  console.log(overview);
-  console.log(release_date);
-  console.log(poster_path);
 
 
   const response = await fetch('/api/movies/onDeck', {

@@ -19,14 +19,9 @@ function searchApi(genreIdVal) {
 
 		.then((movies) => showMovies(movies.results));
 }
-// ${movie.poster_path}
-// ${movie.title}
-// ${movie.release_date}
-// ${movie.overview}
-showMovies = (movies) => {
-	// let el = document.getElementsByClassName('flag');
 
-  // if (!el) {
+showMovies = (movies) => {
+
     movies.forEach((movie) => {
       const movieCard = document.createElement("div");
       movieCard.classList.add(
@@ -56,16 +51,12 @@ showMovies = (movies) => {
   `;
 		titleEl.append(movieCard);
 	});
-	// } else {
-	//   console.log("Blah");
-	//   document.getElementById("#title-content").innerHTML = "";
-	// }
+
 };
 
 function handleSearchFormSubmit(event) {
 	event.preventDefault();
-	// document.getElementById(titleEl).innerHTML = "";
-	// var searchInputVal = document.querySelector('#format-input').name;
+
 	const formatInputVal = document.querySelector('#format-input').value;
 
 	if (!formatInputVal) {
@@ -73,8 +64,7 @@ function handleSearchFormSubmit(event) {
 		return;
 	}
 
-	// console.log(searchInputVal);
-	console.log(formatInputVal);
+
 	searchApi(formatInputVal);
 }
 document

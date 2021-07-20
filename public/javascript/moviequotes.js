@@ -9,7 +9,7 @@ const movieQuote = async () => {
     });
     const data = await response.json();
     // if (response.ok) {
-        console.log(data);
+        // console.log(data);
         const quoteEl = document.getElementById('random-quote');
         quoteEl.innerHTML = data;
     // } else {

@@ -5,9 +5,7 @@ const withAuth = require('../../utils/auth');
 
 router.get('/key', async (req, res) => {
   try {
-    console.log('here');
     const apiKey = process.env.DB_API;
-    console.log(apiKey);
     res.json(apiKey);
   } catch (err) {
     console.log(err);

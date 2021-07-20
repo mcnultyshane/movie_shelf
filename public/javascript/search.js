@@ -25,7 +25,7 @@ showMovies = (movies) => {
   searchedMovies.push(movies);
   document.getElementById('movie-list').innerHTML = '';
 
-  console.log(searchedMovies);
+  // console.log(searchedMovies);
   movies.forEach((movie) => {
     const movieCard = document.createElement('div');
     movieCard.classList.add(
@@ -34,7 +34,8 @@ showMovies = (movies) => {
       'is-one-third-tablet',
       'is-2-desktop',
       'is-2-widescreen',
-      'is-1.5-fullhd'
+      'is-1.5-fullhd',
+      'mx-5'
     );
     movieCard.innerHTML = 
    ` <article>
@@ -93,10 +94,9 @@ function movieSearchFormSubmit(ApiKey) {
     console.error('Please enter a movie to search');
     return;
   }
-  console.log(movieSearchEl);
+  // console.log(movieSearchEl);
   searchApi(movieSearchEl, ApiKey);
 }
 
 document.querySelector('#movie-search-form').addEventListener('submit', getKey);
 
-// getKey();

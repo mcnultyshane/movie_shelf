@@ -9,7 +9,7 @@ const signupFormHandler = async (event) => {
   // if both fields have content
   if (username && password) {
     // POST the new user to the user table in the database.  
-    console.log('here');
+    
     const response = await fetch("/api/users/signup", {
       method: "POST",
       body: JSON.stringify({
