@@ -15,7 +15,7 @@ async function addWatched(event) {
   console.log(poster_path);
 
 
-  const response = await fetch('/api/movies/', {
+  const response = await fetch('/api/movies/watched', {
     method: 'POST',
     body: JSON.stringify({title, overview, poster_path, release_date}),
     headers: {
