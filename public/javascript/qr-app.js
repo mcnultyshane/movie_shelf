@@ -6,7 +6,7 @@
 
 // const shelfUrl = '';
 
-// function generateQrCode() 
+// function generateQrCode()
 
 // qrImage
 //     .image("http://www.nodejs.org", {type: 'png', size:20})

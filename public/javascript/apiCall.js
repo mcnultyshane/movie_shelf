@@ -5,37 +5,32 @@ const titleEl = document.querySelector('#title-content');
 
 
 function searchApi(genreIdVal) {
-	let locQueryUrl = 'https://api.themoviedb.org/3/discover/movie?';
+  let locQueryUrl = 'https://api.themoviedb.org/3/discover/movie?';
 
-	locQueryUrl =
+  locQueryUrl =
     locQueryUrl +
     'api_key=' +
     APIkey +
     '&language=en-US&page=1&sort_by=vote_count.desc&with_genres=' +
     genreIdVal;
 
-	fetch(locQueryUrl)
-		.then((response) => response.json())
+  fetch(locQueryUrl)
+    .then((response) => response.json())
 
-		.then((movies) => showMovies(movies.results));
+    .then((movies) => showMovies(movies.results));
 }
-// ${movie.poster_path}
-// ${movie.title}
-// ${movie.release_date}
-// ${movie.overview}
-showMovies = (movies) => {
-	// let el = document.getElementsByClassName('flag');
 
-  // if (!el) {
-    movies.forEach((movie) => {
-      const movieCard = document.createElement("div");
-      movieCard.classList.add(
-        "column",
-        "is-one-quarter",
-        "is-flex-wrap-wrap",
-        "is-flex-direction-row"
-      );
-      movieCard.innerHTML = `
+showMovies = (movies) => {
+
+  movies.forEach((movie) => {
+    const movieCard = document.createElement('div');
+    movieCard.classList.add(
+      'column',
+      'is-one-quarter',
+      'is-flex-wrap-wrap',
+      'is-flex-direction-row'
+    );
+    movieCard.innerHTML = `
 
         <div id="flag" class="card mx-3">
           <div class="card-image">
@@ -54,29 +49,24 @@ showMovies = (movies) => {
       </footer>
       </div>
   `;
-		titleEl.append(movieCard);
-	});
-	// } else {
-	//   console.log("Blah");
-	//   document.getElementById("#title-content").innerHTML = "";
-	// }
+    titleEl.append(movieCard);
+  });
+
 };
 
 function handleSearchFormSubmit(event) {
-	event.preventDefault();
-	// document.getElementById(titleEl).innerHTML = "";
-	// var searchInputVal = document.querySelector('#format-input').name;
-	const formatInputVal = document.querySelector('#format-input').value;
+  event.preventDefault();
 
-	if (!formatInputVal) {
-		console.error('You need a search input value!');
-		return;
-	}
+  const formatInputVal = document.querySelector('#format-input').value;
 
-	// console.log(searchInputVal);
-	console.log(formatInputVal);
-	searchApi(formatInputVal);
+  if (!formatInputVal) {
+    console.error('You need a search input value!');
+    return;
+  }
+
+
+  searchApi(formatInputVal);
 }
 document
-	.querySelector('.search-form')
-	.addEventListener('submit', handleSearchFormSubmit);
+  .querySelector('.search-form')
+  .addEventListener('submit', handleSearchFormSubmit);

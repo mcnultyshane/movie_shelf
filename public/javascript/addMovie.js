@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 async function addWatched(event) {
   console.log('click');
   const element = event.target;
@@ -14,7 +15,7 @@ async function addWatched(event) {
   console.log(poster_path);
 
 
-  const response = await fetch('/api/movies/watched', {
+  const response = await fetch('/api/movies/', {
     method: 'POST',
     body: JSON.stringify({title, overview, poster_path, release_date}),
     headers: {
@@ -29,6 +30,7 @@ async function addWatched(event) {
   }
 }
 
+// eslint-disable-next-line no-unused-vars
 async function addOnDeck(event) {
   console.log('click');
   const element = event.target;
