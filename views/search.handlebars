@@ -1,26 +1,37 @@
 
 {{>nav2}}
-    <p id="title3" class ="title is-size-4-mobile  has-text-centered redText">Search For Movies You Love</p>
-<form action="submit" id="movie-search-form">
-    <div class="container">
-      <section class="column is-4 is-offset-4">
 
-      <div >
-        <input class="input is-large" type="text" placeholder="enter a movie title" id="movie-search"/>
-      </div>
 
-      <div>
-        <button class="button is-ghost is-centered is-large" id="createbutton">search</button>
+    <p id="title3" class ="title is-size-4-mobile has-text-centered redText mt-4">Search For Movies You Love</p>
+    <div class="columns is-mobile ">
+      <div class="column is-half is-offset-one-quarter">
+        <form class="box">
+          <div class="field">
+        <div class="control ">
+          <input class="input is-large is-flex-grow-2 mb-2" type="text" placeholder="enter a movie title" id="movie-search"/>
+        </div>
+        <div class="control">
+          <div class="buttons is-centered">
+          <button class="button is-ghost is-large " id="createbutton">search</button>
+          </div>
+        </div>
+        </form>
+        <form action="submit" id="movie-search-form">
+            <div class="container is-flex-wrap-wrap">
+              <div class="field has-addons has-addons-centered">
+
+
+              </div>
+          </div>
+        </form>
       </div>
-  
-    </section>
-    </div> 
-</form>
+    </div>
+
     
 <div class="container is-fluid">
     
 
-    <div id="movie-list" class="columns is-mobile is-flex-wrap-wrap is-flex-direction-row "></div>
+    <div id="movie-list" class="columns is-centered is-mobile is-flex-wrap-wrap is-flex-direction-row "></div>
     </div>
 
 

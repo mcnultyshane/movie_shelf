@@ -34,7 +34,8 @@ showMovies = (movies) => {
       'is-one-third-tablet',
       'is-2-desktop',
       'is-2-widescreen',
-      'is-1.5-fullhd'
+      'is-1.5-fullhd',
+      'mx-5'
     );
     movieCard.innerHTML = 
    ` <article>
