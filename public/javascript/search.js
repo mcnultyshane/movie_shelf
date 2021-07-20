@@ -1,6 +1,7 @@
 let ApiKey = '';
 const movieList = document.querySelector('#movie-list');
 
+// eslint-disable-next-line no-unused-vars
 let searchedMovies = [];
 
 function searchApi(movieSearchEl, ApiKey) {
@@ -25,7 +26,7 @@ showMovies = (movies) => {
   searchedMovies.push(movies);
   document.getElementById('movie-list').innerHTML = '';
 
-  console.log(searchedMovies);
+  // console.log(searchedMovies);
   movies.forEach((movie) => {
     const movieCard = document.createElement('div');
     movieCard.classList.add(
@@ -37,7 +38,7 @@ showMovies = (movies) => {
       'is-1.5-fullhd',
       'mx-5'
     );
-    movieCard.innerHTML = 
+    movieCard.innerHTML =
    ` <article>
     <figure class="image is-200x296">
       <img src="https://image.tmdb.org/t/p/w400/${movie.poster_path}" />
@@ -66,7 +67,7 @@ showMovies = (movies) => {
 
 
     </footer>`
-   ;
+    ;
     movieList.append(movieCard);
   });
 };
@@ -84,6 +85,7 @@ function getKey(event) {
     .then((data) => {
       ApiKey = data;
       console.log(ApiKey);
+      // eslint-disable-next-line no-use-before-define
       movieSearchFormSubmit(ApiKey);
     });
 }
@@ -94,10 +96,9 @@ function movieSearchFormSubmit(ApiKey) {
     console.error('Please enter a movie to search');
     return;
   }
-  console.log(movieSearchEl);
+  // console.log(movieSearchEl);
   searchApi(movieSearchEl, ApiKey);
 }
 
 document.querySelector('#movie-search-form').addEventListener('submit', getKey);
 
-// getKey();

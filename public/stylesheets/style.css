@@ -108,7 +108,10 @@ button:hover {
 
 }
 
+.background-transparent{
+    background-color: transparent!important;
 
+}
 .input, .select select, .textarea {
     background-color: transparent;
     border-color: var(--red);

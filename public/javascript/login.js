@@ -3,12 +3,11 @@ const submitEl = document.getElementById('#submitbutton');
 const loginFormHandler = async (event) => {
   event.preventDefault();
 
-  console.log('click');
+
   const username = document.querySelector("#username-login").value.trim();
   const password = document.querySelector("#password-login").value.trim();
 
-    console.log(username);
-    console.log(password);
+   
   if (username && password) {
     console.log('here');
     const response = await fetch("/api/users/login", {

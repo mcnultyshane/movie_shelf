@@ -21,8 +21,8 @@ router.use('/shelf', shelfRoutes);
 
 // Define a catch-all route for any resource that doesn't exist
 router.use((req, res) => {
-    res.status(404).end();
-  });
-  
+  res.status(404).end();
+});
+
 
 module.exports = router;
