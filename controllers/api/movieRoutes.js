@@ -62,13 +62,13 @@ router.get('/:id', async (req, res) => {
     // return the posts
     res.json(movieData);
     // if there was a server error, return the error
-  }  catch (err) {
+  } catch (err) {
     console.log(err);
-    res.status(500).json.err
+    res.status(500).json.err;
   }
 });
 
-// create a new watched movie 
+// create a new watched movie
 router.post('/watched', withAuth, async (req, res) => {
   try {
     const movieData = await Movie.create({
@@ -80,15 +80,15 @@ router.post('/watched', withAuth, async (req, res) => {
       // popularity: req.body.popularity,
       user_id: req.session.user_id,
       shelf_id: req.session.shelf_id,
-            
-      watched: true   
 
-    })
-    res.json(movieData)
+      watched: true
+
+    });
+    res.json(movieData);
     // if there was a server error, return the error
-  }  catch (err) {
+  } catch (err) {
     console.log(err);
-    res.status(500).json.err
+    res.status(500).json.err;
   }
 });
 router.post('/onDeck', withAuth, async (req, res) => {
@@ -102,15 +102,15 @@ router.post('/onDeck', withAuth, async (req, res) => {
       // popularity: req.body.popularity,
       user_id: req.session.user_id,
       shelf_id: req.session.shelf_id,
-            
-      on_deck: true   
 
-    })
-    res.json(movieData)
+      on_deck: true
+
+    });
+    res.json(movieData);
     // if there was a server error, return the error
-  }  catch (err) {
+  } catch (err) {
     console.log(err);
-    res.status(500).json.err
+    res.status(500).json.err;
   }
 });
 
@@ -122,7 +122,7 @@ router.delete('/:id', withAuth, async (req, res) => {
       where: {
         id: req.params.id
       }
-    })
+    });
     if (!movieData) {
       res.status(404).json({ message: 'No movie found with this id' });
       return;
@@ -130,7 +130,7 @@ router.delete('/:id', withAuth, async (req, res) => {
     res.json(movieData);
   } catch (err) {
     console.log(err);
-    res.status(500).json.err
+    res.status(500).json.err;
   }
 });
 

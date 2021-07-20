@@ -1,5 +1,6 @@
+// eslint-disable-next-line no-unused-vars
 async function addWatched(event) {
-
+  console.log('click');
   const element = event.target;
 
   const title = element.title;
@@ -8,9 +9,13 @@ async function addWatched(event) {
   const release_date = element.getAttribute('data-release_date');
   const poster_path = element.getAttribute('data-poster_path');
 
+  console.log(title);
+  console.log(overview);
+  console.log(release_date);
+  console.log(poster_path);
 
 
-  const response = await fetch('/api/movies/watched', {
+  const response = await fetch('/api/movies/', {
     method: 'POST',
     body: JSON.stringify({title, overview, poster_path, release_date}),
     headers: {
@@ -25,8 +30,9 @@ async function addWatched(event) {
   }
 }
 
+// eslint-disable-next-line no-unused-vars
 async function addOnDeck(event) {
-
+  console.log('click');
   const element = event.target;
 
   const title = element.title;
@@ -35,6 +41,10 @@ async function addOnDeck(event) {
   const release_date = element.getAttribute('data-release_date');
   const poster_path = element.getAttribute('data-poster_path');
 
+  console.log(title);
+  console.log(overview);
+  console.log(release_date);
+  console.log(poster_path);
 
 
   const response = await fetch('/api/movies/onDeck', {
