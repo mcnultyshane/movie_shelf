@@ -17,7 +17,9 @@
   Movie Shelf is a virtual movie library app that allows logged-in users to store movies in their "Shelf", which contains two sections: "Watched", and "On Deck". You can search for movies by title and add them to your Watched or On Deck lists. You can also browse other users Shelves so you can see what your friends are watching!
       
   ## Getting Started
-      
+Click <a href="https://yourmovieshelf.herokuapp.com/" target="_blank">here</a> to see the deployed site. 
+<br>
+<img src='./images/screencapture-yourmovieshelf-herokuapp-shelf-search-2021-07-24-13_18_23.jpg' style="width:800px;" alt='app screenshot'>
   ### Dependencies
       
     bcrypt

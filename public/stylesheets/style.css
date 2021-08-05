@@ -24,11 +24,19 @@ html{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+.field.has-addons {
+    display: flex;
+    justify-content: flex-start
+}
+
+.box {
+    background: transparent;
+}
 
 button {
     color: var(--red)!important;
     border-color: var(--blue)!important;
-    width: 200px;
+    /* width: 200px; */
     /* text-shadow: 2px 2px 2px black;
     box-shadow: 0px 0px 10px 5px var(--black); */
 }
@@ -200,3 +208,6 @@ button:hover {
         transform: translateX(-100%);
     }
 } */
+
+
+/* navbar stylings */
